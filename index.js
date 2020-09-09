@@ -24,6 +24,7 @@ board = new Board();
 
 
 function flip(x, y) {
+
     if (board.cases[x][y + 1] != null)
         board.cases[x][y + 1].flip = !board.cases[x][y + 1].flip;
 
@@ -80,12 +81,14 @@ function displayBoard() {
         document.write("<tr>");
         for (j=0; j<4; j++) {
             if (this.board.cases[i][j].flip)
-                document.write("<td id='"+i+"/"+j+"'onclick='flip(" + i + "," + j + ")'> <img src='img/face.png' height='264px' width='200px'> </td>");
+                image = "img/face.png'"
             else
-                document.write("<td id='"+i+"/"+j+"'onclick='flip(" + i + "," + j + ")'> <img src='img/dos.jpg' height='264px' width='200px'> </td>");
+                image = "img/dos.jpg'"
+
+                document.write("<td id='"+i+"/"+j+"'onclick='flip(" + i + "," + j + ")'> <img src='" + image + " height='264px' width='200px'></td>");
         }
 		document.write("</tr>");
-	}
+    }
     document.write("</table>");
     } else {
         document.write("<h1> YOU WIN ! </h1>");
