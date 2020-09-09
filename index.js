@@ -21,6 +21,7 @@ class Board {
 }
 
 board = new Board();
+x = 0;
 
 
 function flip(x, y) {
@@ -49,6 +50,7 @@ function flip(x, y) {
     if (board.cases[x - 1] != null && board.cases[x - 1][y] != null)
         board.cases[x - 1][y].flip = !board.cases[x - 1][y].flip;
 
+    this.x++;
     displayBoard();
 }
 
@@ -73,6 +75,9 @@ function displayBoard() {
     document = new Document;
     document.open();
     
+    document.write("<h1> Bienvenu sur mon GaspJS ! </h1>");
+    document.write("<h3> Pour gagner, vous devez retourner toutes les cartes du plateau. </h3>");
+
     if (!checkVictory()) {
     document.write("<table>");
 
@@ -90,8 +95,9 @@ function displayBoard() {
 		document.write("</tr>");
     }
     document.write("</table>");
+    document.write("<p> Nombre de coup : " + x + "</p>");
     } else {
-        document.write("<h1> YOU WIN ! </h1>");
+        document.write("<h1> Vous avez gagné en " + this.x + " coup !</h1>");
         setTimeout(newGame(), 10000);
 
     }
