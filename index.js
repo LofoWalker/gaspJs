@@ -92,7 +92,7 @@ function displayBoard() {
     document.write("</table>");
     } else {
         document.write("<h1> YOU WIN ! </h1>");
-        setTimeout(newGame(), 5000);
+        setTimeout(newGame(), 10000);
 
     }
 }
